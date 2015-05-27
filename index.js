@@ -23,7 +23,7 @@ function create() {
 	console.log(
 		chalk.blue('new project')
 	);
-	shell.exec('git clone git@github.com:argyleink/Bolt.git ' + dir);
+	shell.exec('git clone https://github.com/argyleink/Bolt.git ' + dir);
 
 	console.log('cleaning up');
 	shell.exec('rm -rf '+ (custom_dir ? dir : '.') +'/.git');
