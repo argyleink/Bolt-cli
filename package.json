@@ -1,6 +1,6 @@
 {
-  "name":         "Bolt-cli",
-  "version":      "0.1.0",
+  "name":         "bolt-cli",
+  "version":      "0.1.1",
   "description":  "Command line for creating and managing Bolt projects",
   "author":       "Adam Argyle",
   "license":      "ISC",
