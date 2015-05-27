@@ -1,6 +1,6 @@
 This project is for use with [Bolt](https://github.com/argyleink/Bolt).
 
-The CLI does 2 thing:
+The CLI does 2 things:
 - `bolt`
 	Creates a new Bolt project inside the current directory
 - `bolt new #{your_dir}`
