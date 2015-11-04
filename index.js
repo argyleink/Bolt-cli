@@ -1,36 +1,59 @@
 #! /usr/bin/env node
+'use strict'
 
-var shell       = require('shelljs')
+let shell       = require('shelljs')
   , asciify     = require('asciify')
   , chalk       = require('chalk')
+  , bolt        = require('./package.json')
 
   // non deps
+  , asciiFont   = 'speed'
   , userArgs    = process.argv.splice(2)
-  , command     = userArgs[0] || 'new'
+  , command     = userArgs[0]
   , dir         = userArgs[1] || '.'
   , custom_dir  = dir !== '.'
 ;
 
-asciify('Bolt', {
-  font: 'alligator',
-  color: 'blue'
-}, function(err, res){ 
-  console.log(res);
-  create();
-});
+// Command Route
+switch(command) {
+  case '-v':
+    console.log(bolt.version)
+    break
+  case 'new':
+    newProject()
+    break
+  default:
+    run()
+}
 
-function create() {
-  console.log(
-    chalk.blue('new project')
-  );
-  shell.exec('git clone https://github.com/argyleink/Bolt.git ' + dir);
+function newProject() {
+  asciify('Bolt', {
+    font:   asciiFont,
+    color:  'cyan'
+  }, (err, res)=> {
+    console.log(res)
+    create()
+  })
 
-  console.log('cleaning up');
-  shell.exec('rm -rf '+ (custom_dir ? dir : '.') +'/.git');
+  function create() {
+    // git clone
+    shell.exec(`git clone https://github.com/argyleink/Bolt.git ${dir}`)
 
-  console.log(
-    chalk.green('done')
-  );
+    // delete cruft
+    console.log('Cleaning up..')
+    shell.exec(`rm -rf ${(custom_dir ? dir : '.')}/.git`)
 
-  console.log('run '+ chalk.red.bold('npm i') +' from the new project root');
+    // complete
+    console.log(
+      chalk.green('done!')
+    )
+
+    // prompt
+    let command = chalk.cyan(`cd ${dir} && npm i && bower i && grunt`)
+    console.log(`Next: run ${command} and you're ready to hack optimally`)
+  }
+}
+
+function run() {
+  shell.exec('grunt')
 }

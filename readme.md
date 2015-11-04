@@ -1,9 +1,11 @@
 This project is for use with [Bolt](https://github.com/argyleink/Bolt).
 
-The CLI does 2 things:
+The CLI does a few things:
 - `bolt`
-	Creates a new Bolt project inside the current directory
-- `bolt new #{your_dir}`
-	Creates a new project in a new directory you name
+    Runs the default Bolt task, aka `grunt`
+- `bolt new ${project_name}`
+    Creates a new bolt project in a new directory you name
+- `bolt -v`
+    Show Bolt version
 
 ![cli preview](https://pbs.twimg.com/media/CGEM7m1UsAApwtR.png)
