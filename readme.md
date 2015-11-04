@@ -8,4 +8,4 @@ The CLI does a few things:
 - `bolt -v`
     Show Bolt version
 
-![cli preview](https://pbs.twimg.com/media/CGEM7m1UsAApwtR.png)
+![cli preview](http://g.recordit.co/AZ1Qzr5lAk.gif)
