@@ -1,6 +1,8 @@
 This project is for use with [Bolt](https://github.com/argyleink/Bolt).
 
-The CLI does a few things:
+Install globally with NPM: `npm i -g bolt-cli`
+
+The CLI provides a few things:
 - `bolt`
     Runs the default Bolt task, aka `grunt`
 - `bolt new ${project_name}`
